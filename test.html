@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div id="container">
+  <div
+    class="html5-video-player"
+    tabindex="-1" id="movie_player" data-version="">
+    <div class="html5-video-container" style="width: 800px; height: 600px;background-color: #444;">
+    </div>
+    <div class="html5-player-chrome">
+      <div class="ytp-button ytp-button-prev" role="button" aria-label="Previous" tabindex="6050"
+           style="display: inline-block;"></div>
+      <div class="ytp-button ytp-button-replay" role="button" tabindex="6000" aria-label="Replay"></div>
+      <div class="ytp-button ytp-button-next" role="button" aria-label="Next" tabindex="6051"
+           style="display: inline-block;"></div>
+      <span class="ytp-volume-hover-area"><div class="ytp-volume-control">
+        <div class="ytp-button ytp-button-volume" role="button" tabindex="6100" aria-label="mute toggle"
+             data-value="max"></div>
+        <div class="ytp-volume-panel" role="slider" aria-valuemin="0" aria-valuemax="100" tabindex="6200"
+             aria-valuenow="100" aria-valuetext="100% volume">
+          <div class="ytp-volume-slider" draggable="true">
+            <div class="ytp-volume-slider-foreground" style="left: 49px;"></div>
+          </div>
+        </div>
+      </div><div class="ytp-time-display html5-control" aria-hidden="true"><span
+        class="ytp-time-current">4:06</span><span class="ytp-time-separator"> / </span><span class="ytp-time-duration">4:06</span><span
+        class="ytp-time-live-badge">Live</span></div></span>
+
+      <div class="ytp-button ytp-button-fullscreen-enter" role="button" tabindex="6900" aria-label="Full screen"
+           style="display: inline-block;"></div>
+      <div class="ytp-button ytp-size-toggle-large" role="button" aria-label="Theater mode" tabindex="6800"
+           style="display: inline-block;"></div>
+      <div class="ytp-button ytp-button-watch-on-youtube" role="button" aria-label="Watch on YouTube.com"
+           tabindex="6700" aria-hidden="true" style="display: none;"></div>
+      <div class="ytp-button ytp-settings-button" role="button" aria-label="Settings" tabindex="6600"
+           aria-haspopup="true" id="settings_button">
+        <div class=""></div>
+      </div>
+      <div class="ytp-button ytp-button-playlist" role="button" aria-label="Playlist" tabindex="6400"></div>
+      <div class="ytp-button ytp-button-watch-later" role="button" aria-label="Watch Later" tabindex="6300"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="dist/js/chrome-youtube-resizer.js"></script>
+<link type="text/css" rel="stylesheet" href="dist/css/chrome-youtube-resizer.css" property="stylesheet"/>
+</body>
+</html>

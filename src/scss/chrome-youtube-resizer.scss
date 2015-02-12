@@ -1,0 +1,14 @@
+/**
+ * Chrome YouTube Resizer
+ * (c) 2015 Daniel Davison & Contributors
+*/
+$width: 30px;
+$height: 27px;
+
+.ytp-button-resize {
+  float: right !important;
+  width: $width;
+  height: $height;
+  cursor: nwse-resize !important;
+  background-size: $width $height;
+}

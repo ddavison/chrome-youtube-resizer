@@ -1,0 +1,25 @@
+{
+  "name": "YouTube Video Resizer",
+  "description": "Allows you to resize YouTube videos to any dimension you want",
+  "author": "Daniel Davison",
+  "homepage_url": "https://github.com/ddavison/chrome-youtube-resizer",
+  "version": "0.1",
+  "manifest_version": 2,
+
+  "background": {
+    "scripts": [ "js/chrome-youtube-resizer.js" ]
+  },
+
+  "content_scripts": [ {
+    "all_frames": true,
+    "js": [ "js/chrome-youtube-resizer.js" ],
+    "matches": [ "*://*.youtube.com/*" ],
+    "run_at": "document_end"
+  },{
+    "all_frames": true,
+    "css": [ "css/chrome-youtube-resizer.css"],
+    "matches": [ "*://*.youtube.com/*" ]
+  } ],
+
+  "update_url": "https://github.com/ddavison/chrome-youtube-resizer/updates.xml"
+}

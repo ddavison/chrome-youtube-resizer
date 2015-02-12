@@ -1,0 +1,34 @@
+{
+  "name": "YouTube_Video_Resizer",
+  "version": "1.0.0",
+  "description": "Allows you to resize YouTube videos to any dimension you want.",
+  "main": "Gruntfile.coffee",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ddavison/chrome-youtube-resizer.git"
+  },
+  "author": [
+    "Daniel Davison <sircapsalot@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ddavison/chrome-youtube-resizer/issues"
+  },
+  "homepage": "https://github.com/ddavison/chrome-youtube-resizer",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-haml2html": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-shell": "*",
+    "haml-coffee": "*"
+  }
+}
