@@ -7,21 +7,22 @@
 ###
 
 class Resizer
-  @btnResize             = document.createElement('div')
-  @btnFullScreen         = document.getElementsByClassName('ytp-button-fullscreen-enter')[0]
-  @mainContainer         = document.getElementById('player-api')
+  @btnResize             = document.createElement         ('div')
+
+  @controlParent         = document.getElementsByClassName('html5-player-chrome')[0]
+  @firstChild            = @controlParent.firstChild
+  @mainContainer         = document.getElementById        ('player-api')
   @videoContainer        = document.getElementsByClassName('html5-main-video')[0] # sjust the video container
   @videoContentContainer = document.getElementsByClassName('html5-video-content')[0]
-  @controlParent         = document.getElementsByClassName('html5-player-chrome')[0]
 
   @activate: ->
-    @btnResize.setAttribute('class', 'ytp-button ytp-button-resize')
-    @btnResize.setAttribute('role', 'button')
+    @btnResize.setAttribute('class',      'ytp-button ytp-button-resize')
+    @btnResize.setAttribute('role',       'button')
     @btnResize.setAttribute('aria-label', 'Resize')
-    @btnResize.setAttribute('tabindex', '5000')
+    @btnResize.setAttribute('tabindex',   '5000')
 
     if (typeof chrome.extension != 'undefined')
-      @btnResize.setAttribute('style', "display: inline-block;background-image: url(#{chrome.extension.getURL('images/resize.svg')});background-size: 30px 27px;")
+      @btnResize.setAttribute('style', "display: inline-block;background-image: url(#{chrome.extension.getURL('images/resize.png')});background-size: 30px 27px;")
     else
       @btnResize.setAttribute('style', "display: inline-block;background-image: url(dist/images/resize.png)")
 
@@ -29,7 +30,7 @@ class Resizer
 
   # append the element to the youtube vapp/controllers/metrics_controller.rbideo player
   @insertElement: ->
-    @controlParent.insertBefore(@btnResize, @btnFullScreen)
+    @controlParent.insertBefore(@btnResize, @firstChild)
 
   # Dragging.  Thank you! to..
   # http://stackoverflow.com/questions/8960193/how-to-make-html-element-resizable-using-pure-javascript#answer-8960307
@@ -57,7 +58,7 @@ class Resizer
   @doDrag: (e) =>
     @resizeContainer(e.clientX, e.clientY)
 
-  @stopDrag: (e) =>
+  @stopDrag: =>
     document.documentElement.removeEventListener('mousemove', @doDrag, false)
     document.documentElement.removeEventListener('mouseup', @stopDrag, false)
 

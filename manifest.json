@@ -21,5 +21,8 @@
     "matches": [ "*://*.youtube.com/*" ]
   } ],
 
-  "update_url": "https://github.com/ddavison/chrome-youtube-resizer/updates.xml"
+  "update_url": "https://github.com/ddavison/chrome-youtube-resizer/updates.xml",
+  "web_accessible_resources": [
+    "images/*.png"
+  ]
 }
