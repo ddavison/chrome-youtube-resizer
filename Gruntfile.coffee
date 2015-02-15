@@ -50,12 +50,12 @@ module.exports = (grunt) ->
           src: ['*'],
           dest: '<%= imagesOutput %>/'
         }]
-      third_party:
-        files: [{
-          expand: true,
-          src: ['third-party/**'],
-          dest: '<%= outputDir %>'
-        }]
+#      third_party:
+#        files: [{
+#          expand: true,
+#          src: ['third-party/**'],
+#          dest: '<%= outputDir %>'
+#        }]
 
     uglify:
       minify:
