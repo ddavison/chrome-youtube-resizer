@@ -96,7 +96,7 @@ module.exports = (grunt) ->
     'compass:dist',      # compile the sass
     'copy:manifest',     # copy the chrome manifest
     'copy:images',          # copy the png resize button
-    'copy:third_party',  # copy all third party sources that are needed
+  #  'copy:third_party',  # copy all third party sources that are needed
   ])
 
   grunt.registerTask('release', ->

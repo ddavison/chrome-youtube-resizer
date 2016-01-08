@@ -3,7 +3,7 @@
   "description": "Puts a resize button on YouTube videos allowing you to size them any way you want",
   "author": "Daniel Davison",
   "homepage_url": "https://github.com/ddavison/chrome-youtube-resizer",
-  "version": "1.0",
+  "version": "2.0",
   "manifest_version": 2,
 
   "background": {

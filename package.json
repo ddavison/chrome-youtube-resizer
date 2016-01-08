@@ -1,6 +1,6 @@
 {
   "name": "YouTube_Video_Resizer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Allows you to resize YouTube videos to any dimension you want.",
   "main": "Gruntfile.coffee",
   "scripts": {

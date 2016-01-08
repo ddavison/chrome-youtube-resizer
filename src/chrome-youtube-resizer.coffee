@@ -7,22 +7,23 @@
 ###
 
 class Resizer
-  @btnResize             = document.createElement         ('div')
+  @btnResize             = document.createElement         ('button')
 
-  @controlParent         = document.getElementsByClassName('html5-player-chrome')[0]
+  @controlParent         = document.querySelector('.ytp-chrome-controls')
   @firstChild            = @controlParent.firstChild
-  @mainContainer         = document.getElementById        ('player-api')
-  @videoContainer        = document.getElementsByClassName('html5-main-video')[0] # sjust the video container
-  @videoContentContainer = document.getElementsByClassName('html5-video-content')[0]
+  @mainContainer         = document.querySelector('#player-api')
+  @videoContainer        = document.querySelector('.html5-main-video')
+  @videoContentContainer = document.querySelector('.html5-video-content')
+
+  @seekSlider            = document.querySelector('.ytp-progress-bar-padding')
 
   @activate: ->
-    @btnResize.setAttribute('class',      'ytp-button ytp-button-resize')
-    @btnResize.setAttribute('role',       'button')
-    @btnResize.setAttribute('aria-label', 'Resize')
+    @btnResize.setAttribute('class',      'ytp-resize-button ytp-button')
+    @btnResize.setAttribute('title',      'Resize')
     @btnResize.setAttribute('tabindex',   '5000')
 
     if (typeof chrome.extension != 'undefined')
-      @btnResize.setAttribute('style', "display: inline-block;background-image: url(#{chrome.extension.getURL('images/resize.png')});background-size: 30px 27px;")
+      @btnResize.setAttribute('style', "display: inline-block;background-image: url(#{chrome.extension.getURL('images/resize.png')});background-size: 36px 36px;")
     else
       @btnResize.setAttribute('style', "display: inline-block;background-image: url(dist/images/resize.png)")
 
@@ -64,14 +65,25 @@ class Resizer
 
   # this method resizes all elements that need to be resized in order for the video to fit
   @resizeContainer: (cX, cY) =>
-    objectsToResize = [
+    resizableHorizontalObjects = [
       @mainContainer,
       @videoContentContainer,
-      @videoContainer
+      @videoContainer,
+      @controlParent,
+      document.querySelector('.player-width.player-height'),
     ]
 
-    for obj in objectsToResize
-      obj.style.width  = (@dragStartWidth + cX - @dragStartX) + 'px'
+    resizableVerticalObjects = [
+      @mainContainer,
+      @videoContentContainer,
+      @videoContainer,
+      document.querySelector('.player-width.player-height'),
+    ]
+
+    for obj in resizableVerticalObjects
       obj.style.height = (@dragStartHeight + cY - @dragStartY) + 'px'
+
+    for obj in resizableHorizontalObjects
+      obj.style.width  = (@dragStartWidth + cX - @dragStartX) + 'px'
 
 Resizer.activate()
